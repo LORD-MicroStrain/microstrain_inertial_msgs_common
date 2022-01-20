@@ -23,7 +23,7 @@ uint16  epoch_status
 uint8   dongle_version
 uint8   dongle_modem_state      # Use in conjunction with MODEM_STATE_* values
 uint8   dongle_connection_type  # Use in conjunction with CONNECTION_TYPE_* values
-int8    dongle_rssi
+int8    dongle_rssi             # RSSI values are negative
 uint8   dongle_signal_quality
 uint8   dongle_tower_change_indicator
 bool    dongle_nmea_timeout
