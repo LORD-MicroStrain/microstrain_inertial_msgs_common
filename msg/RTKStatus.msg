@@ -36,3 +36,6 @@ float32 gps_correction_latency
 float32 glonass_correction_latency
 float32 galileo_correction_latency
 float32 beidou_correction_latency
+
+
+uint32  raw_status_flags        # Raw status flags value
