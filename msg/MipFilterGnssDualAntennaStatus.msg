@@ -17,9 +17,10 @@ float32 heading_unc
 uint8 fix_type
 
 # Parsed out version of the Status Flags bitfield
-uint8 status_flags_rcv_1_data_valid
-uint8 status_flags_rcv_2_data_valid
-uint8 status_flags_antenna_offsets_valid
+microstrain_inertial_msgs/MipFilterGnssDualAntennaStatusStatusFlags status_flags
+
+# Valid flags (0 = invalid, 1 = valid)
+uint16 valid_flags
 
 # Possible values for fix_type
 uint8 FIX_TYPE_FIX_NONE     = 0

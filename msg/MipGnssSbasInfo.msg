@@ -11,19 +11,16 @@ float64 time_of_week
 uint16 week_number
 
 # SBAS system if. See SBAS_SYSTEM_* enums for possible values
-uint8   sbas_system
+uint8 sbas_system
 
 # SBAS satellite id
-uint8   sbas_id
+uint8 sbas_id
 
 # Number of SBAS corrections
-uint8   count
+uint8 count
 
 # Parsed out version of the SBAS status bitfield
-bool status_range_available
-bool status_corrections_available
-bool status_integrity_available
-bool status_test_mode
+microstrain_inertial_msgs/MipGnssSbasInfoSbasStatus sbas_status
 
 # Possible values for the sbas_system field
 uint8 SBAS_SYSTEM_UNKNOWN = 0

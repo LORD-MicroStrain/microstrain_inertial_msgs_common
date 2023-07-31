@@ -15,12 +15,8 @@
 std_msgs/Header header
 
 # Device information. This information will be read when the node first activates.
-# To force an update of this information (shouldn't change during runtime), call the /device_report service
-string model_name
-string model_number
-string serial_number
-string device_options
-string firmware_version
+# To force an update of this information (shouldn't change during runtime), call the mip/base/get_device_information service
+microstrain_inertial_msgs/MipBaseDeviceInfo device_info
 
 # GNSS state. See GNSS_STATE_* for possible values
 # This value is computed from many different fields from microstrain_inertial_msgs/MipGnssFixInfo.msg and microstrain_inertial_msgs/MipFilterGnssPositionAidingStatus.msg

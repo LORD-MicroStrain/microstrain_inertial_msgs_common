@@ -11,19 +11,4 @@ uint8 receiver_id
 float64 time_of_week
 
 # Parsed out version of the status bit field
-bool tight_coupling  # If 1, the Kalman filter is processing raw range information from this GNSS module
-bool differential    # If 1, the Kalman filter is processing RTK corrections from this GNSS module
-bool integer_fix     # If 1, the Kalman filter has an RTK integer fix from this GNSS module, indicating the best position performance possible
-bool gps_l1          # If 1, the Kalman filter is using GPS L1 measurements
-bool gps_l2          # If 1, the Kalman filter is using GPS L2 measurements
-bool gps_l5          # If 1, the Kalman filter is using GPS L5 measurements
-bool glo_l1          # If 1, the Kalman filter is using GLONASS L1 measurements
-bool glo_l2          # If 1, the Kalman filter is using GLONASS L2 measurements
-bool gal_e1          # If 1, the Kalman filter is using Galileo E1 measurements
-bool gal_e5          # If 1, the Kalman filter is using Galileo E5 measurements
-bool gal_e6          # If 1, the Kalman filter is using Galileo E6 measurements
-bool bei_b1          # If 1, the Kalman filter is using Beidou B1 measurements (not enabled on GQ7 currently)
-bool bei_b2          # If 1, the Kalman filter is using Beidou B2 measurements (not enabled on GQ7 currently)
-bool bei_b3          # If 1, the Kalman filter is using Beidou B3 measurements (not enabled on GQ7 currently)
-bool no_fix          # If 1, this GNSS module is reporting no position fix
-bool config_error    # If 1, there is likely an issue with the antenna offset for this GNSS module
+microstrain_inertial_msgs/MipFilterGnssPositionAidingStatusStatus status

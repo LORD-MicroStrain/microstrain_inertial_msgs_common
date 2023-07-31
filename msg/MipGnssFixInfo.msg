@@ -11,8 +11,7 @@ uint8 fix_type
 uint8 num_sv
 
 # Parsed out version of the fix_flags bitfield
-bool sbas_used
-bool dngss_used
+microstrain_inertial_msgs/MipGnssFixInfoFixFlags fix_flags
 
 # Valid values for the fix_type field
 uint8 FIX_TYPE_FIX_3D        = 0

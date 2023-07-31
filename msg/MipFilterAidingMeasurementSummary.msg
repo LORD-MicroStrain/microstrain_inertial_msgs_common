@@ -13,13 +13,8 @@ uint8 source
 # Type of the aiding measurement. See TYPE_* enums for possible values
 uint8 type
 
-# Parsed out version of the indicator bitfield
-bool indicator_enabled
-bool indicator_used
-bool indicator_residual_high_warning
-bool indicator_sample_time_warning
-bool indicator_configuration_error
-bool indicator_max_num_meas_exceeded
+# Parsed version of indicator bitfield
+microstrain_inertial_msgs/MipFilterAidingMeasurementSummaryIndicator indicator
 
 # Possible values for type
 uint8 TYPE_GNSS         = 1
