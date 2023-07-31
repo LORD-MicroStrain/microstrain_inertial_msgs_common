@@ -2,7 +2,7 @@
 
 # Header containing common information
 #   header.frame_id has no meaning in this message
-microstrain_inertial_msgs/MicrostrainHeader header
+microstrain_inertial_msgs/MipHeader header
 
 # Parsed out representation of the status bitfield
 microstrain_inertial_msgs/MipSensorOverrangeStatusStatus status

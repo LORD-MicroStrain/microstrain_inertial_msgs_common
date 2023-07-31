@@ -2,7 +2,7 @@
 
 # Header containing common information
 #   header.frame_id has no meaning in this message
-microstrain_inertial_msgs/MicrostrainHeader header
+microstrain_inertial_msgs/MipHeader header
 
 # Fix type. See FIX_TYPE_* enums for possible values
 uint8 fix_type

@@ -2,7 +2,7 @@
 
 # Header containing common information
 #   header.frame_id has no meaning in this message
-microstrain_inertial_msgs/MicrostrainHeader header
+microstrain_inertial_msgs/MipHeader header
 
 # Receiver ID. For GQ7, this will be 1 for GNSS1 and 2 for GNSS2
 uint8 receiver_id

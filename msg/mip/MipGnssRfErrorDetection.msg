@@ -2,7 +2,7 @@
 
 # Header containing common information
 #   header.frame_id has no meaning in this message
-microstrain_inertial_msgs/MicrostrainHeader header
+microstrain_inertial_msgs/MipHeader header
 
 # RF Band of the reported information. See RF_BAND_* enums for possible values
 uint8 rf_band

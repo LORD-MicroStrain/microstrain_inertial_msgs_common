@@ -2,7 +2,7 @@
 
 # Header containing common information
 #   header.frame_id has no meaning in this message
-microstrain_inertial_msgs/MicrostrainHeader header
+microstrain_inertial_msgs/MipHeader header
 
 # Last dual-antenna GNSS aiding measurement time of week (seconds)
 float32 time_of_week

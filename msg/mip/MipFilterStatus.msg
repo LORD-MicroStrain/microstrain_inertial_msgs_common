@@ -2,7 +2,7 @@
 
 # Header containing common information
 #   header.frame_id has no meaning in this message
-microstrain_inertial_msgs/MicrostrainHeader header
+microstrain_inertial_msgs/MipHeader header
 
 # Device-specific filter state. Please consult the user manual for definition. See FILTER_STATE_* enums for possible values
 uint16 filter_state
