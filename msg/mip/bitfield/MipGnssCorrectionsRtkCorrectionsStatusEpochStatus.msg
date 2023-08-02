@@ -4,6 +4,7 @@
 bool antenna_location_received
 bool antenna_description_received
 bool gps_received
+bool galileo_received
 bool glonass_received
 bool beidou_received
 bool using_gps_msm_messages  # Using MSM messages for GPS corrections instead of RTCM messages 1001-1004
