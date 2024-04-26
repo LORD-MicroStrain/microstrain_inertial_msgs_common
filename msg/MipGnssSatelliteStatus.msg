@@ -19,6 +19,6 @@ float32 elevation
 
 float32 azimuth
 
-bool healthy
+bool health
 
 MipGnssSatelliteStatusValidFlags valid_flags
