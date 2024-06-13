@@ -35,6 +35,11 @@ string filter_state
 # See STATIS_FLAG_* for possible values that could be in this array
 string[] status_flags
 
+# String version of the possible continuous bit fields possibly provided by the device.
+# Generally, you want to see nothing populated in this message, but when you do see something, it can be used to diagnose problems with the device.
+# For more information, see https://files.microstrain.com/GQ7+User+Manual/external_content/dcp/Commands/0x01/data/0x08.htm
+string[] continuous_bit_flags
+
 # Possible value for any field if a devicedoes not support it
 string UNSUPPORTED = "Unsupported"
 
@@ -95,3 +100,54 @@ string STATUS_FLAGS_GQ7_ANTENNA_LEVER_ARM_WARNING   = "Antenna Lever Arm Warning
 string STATUS_FLAGS_GQ7_MOUNTING_TRANSFORM_WARNING  = "Mounting Transform Warning"
 string STATUS_FLAGS_GQ7_TIME_SYNC_WARNING           = "Time Sync Warning"
 string STATUS_FLAGS_GQ7_SOLUTION_ERROR              = "Solution Error"
+
+# Possible values to be stored in continuous_bit_flags when the connected device is a GQ7
+# See https://files.microstrain.com/GQ7+User+Manual/user_manual_content/additional_features/Built-in%20Test.htm for more information
+string CONTINUOUS_BIT_FLAGS_GQ7_SYSTEM_CLOCK_FAILURE           = "System Clock Failure"
+string CONTINUOUS_BIT_FLAGS_GQ7_POWER_FAULT                    = "Power Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_FIRMWARE_FAULT                 = "Firmware Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_TIMING_OVERLOAD                = "Timing Overload"
+string CONTINUOUS_BIT_FLAGS_GQ7_BUFFER_OVERRUN                 = "Buffer Overrun"
+string CONTINUOUS_BIT_FLAGS_GQ7_IMU_IPC_FAULT                  = "IMU IPC Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_FILTER_IPC_FAULT               = "Filter IPC Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_IPC_FAULT                 = "GNSS IPC Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_IMU_CLOCK_FAULT                = "IMU Clock Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_IMU_COMMUNICATION_FAULT        = "IMU Communication Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_IMU_TIMING_OVERRUN             = "IMU Timing Overrun"
+string CONTINUOUS_BIT_FLAGS_GQ7_IMU_CALIBRATION_ERROR_ACCEL    = "IMU Calibration Error - Accel"
+string CONTINUOUS_BIT_FLAGS_GQ7_IMU_CALIBRATION_ERROR_GYRO     = "IMU Calibration Error - Gyro"
+string CONTINUOUS_BIT_FLAGS_GQ7_IMU_CALIBRATION_ERROR_MAG      = "IMU Calibration Error - Mag"
+string CONTINUOUS_BIT_FLAGS_GQ7_ACCELEROMETER_GENERAL_FAULT    = "Accelerometer General Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_ACCELEROMETER_OVER_RANGE       = "Accelerometer Over-Range"
+string CONTINUOUS_BIT_FLAGS_GQ7_ACCELEROMETER_SELF_TEST_FAIL   = "Accelerometer Self-test Fail"
+string CONTINUOUS_BIT_FLAGS_GQ7_GYROSCOPE_GENERAL_FAULT        = "Gyroscope General Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GYROSCOPE_OVER_RANGE           = "Gyroscope Over-Range"
+string CONTINUOUS_BIT_FLAGS_GQ7_GYROSCOPE_SELF_TEST_FAIL       = "Gyroscope Self-test Fail"
+string CONTINUOUS_BIT_FLAGS_GQ7_MAGNETOMETER_GENERAL_FAULT     = "Magnetometer General Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_MAGNETOMETER_OVER_RANGE        = "Magnetometer Over-Range"
+string CONTINUOUS_BIT_FLAGS_GQ7_MAGNETOMETER_SELF_TEST_FAIL    = "Magnetometer Self-test Fail"
+string CONTINUOUS_BIT_FLAGS_GQ7_PRESSURE_SENSOR_GENERAL_FAULT  = "Pressure Sensor General Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_PRESSURE_SENSOR_OVER_RANGE     = "Pressure Sensor Over-Range"
+string CONTINUOUS_BIT_FLAGS_GQ7_PRESSURE_SENSOR_SELF_TEST_FAIL = "Pressure Sensor Self-test Fail"
+string CONTINUOUS_BIT_FLAGS_GQ7_FILTER_CLOCK_FAULT             = "Filter Clock Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_FILTER_HARDWARE_FAULT          = "Filter Hardware Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_FILTER_TIMING_OVERRUN          = "Filter Timing Overrun"
+string CONTINUOUS_BIT_FLAGS_GQ7_FILTER_TIMING_UNDERRUN         = "Filter Timing Underrun"
+string CONTINUOUS_BIT_FLAGS_GQ7_FILTER_COMMUNICATION_ERROR     = "Filter Communication Error"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_CLOCK_FAULT               = "GNSS Clock Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_HARDWARE_FAULT            = "GNSS Hardware Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_COMMUNICATION_ERROR       = "GNSS Communication Error"
+string CONTINUOUS_BIT_FLAGS_GQ7_GPS_TIME_FAULT                 = "GPS Time Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_TIMING_OVERRUN            = "GNSS Timing Overrun"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_RECEIVER_1_POWER_FAULT    = "GNSS Receiver 1 Power Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_RECEIVER_1_FAULT          = "GNSS Receiver 1 Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_ANTENNA_1_SHORTED         = "GNSS Antenna 1 Shorted"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_ANTENNA_1_OPEN            = "GNSS Antenna 1 Open"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_RECEIVER_1_SOLUTION_FAULT = "GNSS Receiver 1 Solution Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_RECEIVER_2_POWER_FAULT    = "GNSS Receiver 2 Power Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_RECEIVER_2_FAULT          = "GNSS Receiver 2 Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_ANTENNA_2_SHORTED         = "GNSS Antenna 2 Shorted"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_ANTENNA_2_OPEN            = "GNSS Antenna 2 Open"
+string CONTINUOUS_BIT_FLAGS_GQ7_GNSS_RECEIVER_2_SOLUTION_FAULT = "GNSS Receiver 2 Solution Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_RTCM_COMMUNICATION_FAULT       = "RTCM Communication Fault"
+string CONTINUOUS_BIT_FLAGS_GQ7_RTK_DONGLE_FAULT               = "RTK Dongle Fault"
