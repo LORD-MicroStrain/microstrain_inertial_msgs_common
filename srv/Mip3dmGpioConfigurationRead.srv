@@ -1,0 +1,50 @@
+# Service definition for the MIP command https://s3.amazonaws.com/files.microstrain.com/GQ7+User+Manual/external_content/dcp/Commands/0x0c/data/0x41.htm
+
+# GPIO pin number counting from 1 which you want to read the configuration for
+uint8 pin
+
+---
+# GPIO pin number counting from 1
+uint8 pin
+
+# Determines how the pin will be used. See FEATURE_* enums for possible values
+uint8 feature
+
+# Select an appropriate value from the enumeration based on the selected feature (e.g. for PPS, select one of the values prefixed with PPS_.). See BEHAVIOR_* enums for possible values
+uint8 behavior
+
+# Bit Field. May be restricted depending on device, pin, feature, and behavior. See device user manual. See PIN_MODE_MASK_* values for bit masks
+uint8 pin_mode
+
+# Possible values for feature
+uint8 FEATURE_UNUSED    = 0  # The pin is not used. It may be technically possible to read the pin state in this mode, but this is not guaranteed to be true of all devices or pins.
+uint8 FEATURE_GPIO      = 1  # General purpose input or output. Use this for direct control of pin output state or to stream the state of the pin.
+uint8 FEATURE_PPS       = 2  # Pulse per second input or output.
+uint8 FEATURE_ENCODER   = 3  # Motor encoder/odometer input.
+uint8 FEATURE_TIMESTAMP = 4  # Precision Timestamping. Use with Event Trigger Configuration (0x0C,0x2E).
+uint8 FEATURE_UART      = 5  # UART data or control lines.
+
+# Possible values for behavior
+uint8 BEHAVIOR_UNUSED            = 0   # Use 0 unless otherwise specified.
+uint8 BEHAVIOR_GPIO_INPUT        = 1   # Pin will be an input. This can be used to stream or poll the value and is the default setting.
+uint8 BEHAVIOR_GPIO_OUTPUT_LOW   = 2   # Pin is an output initially in the LOW state. This state will be restored during system startup if the configuration is saved.
+uint8 BEHAVIOR_GPIO_OUTPUT_HIGH  = 3   # Pin is an output initially in the HIGH state. This state will be restored during system startup if the configuration is saved.
+uint8 BEHAVIOR_PPS_INPUT         = 1   # Pin will receive the pulse-per-second signal. Only one pin can have this behavior. This will only work if the PPS Source command is configured to GPIO.
+uint8 BEHAVIOR_PPS_OUTPUT        = 2   # Pin will transmit the pulse-per-second signal from the device.
+uint8 BEHAVIOR_ENCODER_A         = 1   # Encoder "A" quadrature input. Only one pin can have this behavior. The last command to set this behavior will take precedence.
+uint8 BEHAVIOR_ENCODER_B         = 2   # Encoder "B" quadrature input. Only one pin can have this behavior. The last command to set this behavior will take precedence.
+uint8 BEHAVIOR_TIMESTAMP_RISING  = 1   # Rising edges will be timestamped.
+uint8 BEHAVIOR_TIMESTAMP_FALLING = 2   # Falling edges will be timestamped.
+uint8 BEHAVIOR_TIMESTAMP_EITHER  = 3   # Both rising and falling edges will be timestamped.
+uint8 BEHAVIOR_UART_TX_DEFAULT   = 1   # UART transmit line (auto-select port).
+uint8 BEHAVIOR_UART_RX_DEFAULT   = 2   # UART receive line (auto-select port).
+uint8 BEHAVIOR_UART_TX_AUX1      = 33  # UART transmit line, port 2 (aux port 1).
+uint8 BEHAVIOR_UART_RX_AUX1      = 34  # UART receive line, port 2 (aux port 1).
+uint8 BEHAVIOR_UART_TX_AUX2      = 49  # UART transmit line, port 3 (aux port 2).
+uint8 BEHAVIOR_UART_RX_AUX2      = 50  # UART receive line, port 3 (aux port 2).
+uint8 BEHAVIOR_POWER_SHUTDOWN    = 1   # A logic 1 applied to the pin will place the device in low-power mode. A full restart is executed after the signal is removed.
+
+# Bit mask values for pin_mode.
+uint8 PIN_MODE_MASK_OPEN_DRAIN = 1  # The pin will be an open-drain output. The state will be either LOW or FLOATING instead of LOW or HIGH, respectively. This is used to connect multiple open-drain outputs from several devices. An internal or external pull-up resistor is typically used in combination. The maximum voltage of an open drain output is subject to the device maximum input voltage range found in the specifications.
+uint8 PIN_MODE_MASK_PULLDOWN   = 2  # The pin will have an internal pull-down resistor enabled. This is useful for connecting inputs to signals which can only be pulled high such as mechanical switches. Cannot be used in combination with pull-up. See the device specifications for the resistance value.
+uint8 PIN_MODE_MASK_PULLUP     = 4  # The pin will have an internal pull-up resistor enabled. Useful for connecting inputs to signals which can only be pulled low such as mechanical switches, or in combination with an open drain output. Cannot be used in combination with pull-down. See the device specifications for the resistance value. Use of this mode may restrict the maximum allowed input voltage. See the device datasheet for details.
